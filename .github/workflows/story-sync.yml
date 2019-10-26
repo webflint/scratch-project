@@ -1,0 +1,14 @@
+name: Sync Story Status
+on:
+  push
+  pull_request
+  pull_request_review
+
+jobs:
+  sync_story_status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync Story Status
+        uses: webflint/flow-github-actions@v0.1.1
+        env:
+          TRACKER_API_KEY: ${{ secrets.TRACKER_API_KEY }}
